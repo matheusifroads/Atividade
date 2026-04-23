@@ -57,11 +57,7 @@
                 <input type="text" name="nome" required>
 
                 <label>Nascimento:</label>
-                <div>
-                    <input type="text" size="4" maxlength="2" placeholder="dd">
-                    <input type="text" size="4" maxlength="2" placeholder="mm">
-                    <input type="text" size="4" maxlength="4" placeholder="aaaa">
-                </div>
+                <input type="text" id="nascimento" placeholder="dd/mm/aaaa" maxlength="10" oninput="maskDate(this)">
 
                 <label>Nome da Mãe:</label>
                 <input type="text" name="mae">
@@ -70,11 +66,7 @@
                 <input type="text" name="pai">
 
                 <label>Telefone:</label>
-                <div>
-                    DDD (<input type="text" size="2" maxlength="2">)
-                    Tel: <input type="text" size="8">
-                    Ramal: <input type="text" size="4">
-                </div>
+                <input type="text" id="telefone" placeholder="(ddd) telefone" maxlength="15" oninput="maskPhone(this)">
 
                 <label>E-mail:</label>
                 <input type="email" name="email">
@@ -126,6 +118,21 @@
 
     </form>
 </div>
+
+<script>
+    function maskDate(input) {
+        let value = input.value.replace(/\D/g, '');
+        if (value.length >= 2) value = value.slice(0, 2) + '/' + value.slice(2);
+        if (value.length >= 5) value = value.slice(0, 5) + '/' + value.slice(5, 9);
+        input.value = value;
+    }
+
+    function maskPhone(input) {
+        let value = input.value.replace(/\D/g, '');
+        if (value.length >= 2) value = '(' + value.slice(0, 2) + ') ' + value.slice(2);
+        input.value = value;
+    }
+</script>
 
 </body>
 </html>
