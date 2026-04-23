@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulário de Pré-Matrícula</title>
+    <link rel="stylesheet" href="pico-main/css/pico.classless.css">
+    
+    <style>
+        .container {
+            max-width: 910px;
+            margin: 26px auto;
+            padding: 26px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 195px 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .linha {
+            margin-bottom: 13px;
+        }
+
+        .inline {
+            display: inline-block;
+            margin-right: 13px;
+        }
+
+        .botoes {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Escola Virtual</h1>
+    <h2>Formulário de Pré-Matrícula</h2>
+
+    <form action="#" method="post">
+
+        <!-- Dados Pessoais -->
+        <fieldset>
+            <legend>Dados Pessoais:</legend>
+
+            <div class="grid">
+                <label>Nome do Aluno:</label>
+                <input type="text" name="nome" required>
+
+                <label>Nascimento:</label>
+                <div>
+                    <input type="text" size="2" maxlength="2" placeholder="dd">
+                    /
+                    <input type="text" size="2" maxlength="2" placeholder="mm">
+                    /
+                    <input type="text" size="4" maxlength="4" placeholder="aaaa">
+                </div>
+
+                <label>Nome da Mãe:</label>
+                <input type="text" name="mae">
+
+                <label>Nome do Pai:</label>
+                <input type="text" name="pai">
+
+                <label>Telefone:</label>
+                <div>
+                    DDD (<input type="text" size="2" maxlength="2">)
+                    Tel: <input type="text" size="8">
+                    Ramal: <input type="text" size="4">
+                </div>
+
+                <label>E-mail:</label>
+                <input type="email" name="email">
+            </div>
+
+        </fieldset>
+
+        <!-- Informações de Matrícula -->
+        <fieldset>
+            <legend>Informações de Matrícula:</legend>
+
+            <div class="linha">
+                <label>Série:</label>
+                <select name="serie">
+                    <option>pré-escolar</option>
+                    <option>1º ano</option>
+                    <option>2º ano</option>
+                    <option>3º ano</option>
+                </select>
+            </div>
+
+            <div class="linha">
+                <label>Turno:</label>
+                <label class="inline">
+                    <input type="radio" name="turno" value="manha"> Manhã
+                </label>
+                <label class="inline">
+                    <input type="radio" name="turno" value="tarde"> Tarde
+                </label>
+            </div>
+
+            <div class="linha">
+                <label>Atividades Extracurriculares:</label><br>
+
+                <label><input type="checkbox" name="atividade" value="informatica"> Informática</label><br>
+                <label><input type="checkbox" name="atividade" value="musica"> Música</label><br>
+                <label><input type="checkbox" name="atividade" value="ballet"> Ballet</label><br>
+                <label><input type="checkbox" name="atividade" value="pintura"> Pintura</label><br>
+                <label><input type="checkbox" name="atividade" value="judo"> Judô</label><br>
+                <label><input type="checkbox" name="atividade" value="futebol"> Futebol</label>
+            </div>
+
+        </fieldset>
+
+        <div class="botoes">
+            <input type="submit" value="Envia Formulário">
+            <input type="reset" value="Limpa Campos">
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
